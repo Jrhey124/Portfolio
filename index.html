@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>John Rhey Pena - Biography</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>John Rhey Pena - Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
   <script defer src="script.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
 </head>
 <body>
+  <div id="tsparticles"></div>
   <div class="profile-container">
     <div class="profile-header">
-      <img src="https://media.licdn.com/dms/image/v2/D4E03AQGaQ49UHg8VmA/profile-displayphoto-shrink_200_200/B4EZTls3_aG0AY-/0/1739020534728?e=2147483647&v=beta&t=ffc9JG9mvi31hwDABLdYf47Egwx7vscOkPw49JFv0x4" alt="Profile Picture" class="profile-pic">
+      <img src="https://media.licdn.com/dms/image/v2/D4E03AQGaQ49UHg8VmA/profile-displayphoto-shrink_200_200/B4EZTls3_aG0AY-/0/1739020534728?e=2147483647&v=beta&t=ffc9JG9mvi31hwDABLdYf47Egwx7vscOkPw49JFv0x4" alt="Profile Picture" class="profile-pic" />
       <h1>John Rhey Pena</h1>
       <p class="bio">Skilled programmer with 4 years of C/C++ experience. Passionate about penetration testing, embedded systems, networking, and automation.</p>
     </div>
@@ -41,9 +43,9 @@
       </div>
     </div>
 
-    <div class="achievements">
+    <div class="section achievements">
       <h2>Achievements</h2>
-      <div class="achievement-card">First Runner-Up in ICPeP C Programming Competition (2024)</div>
+      <div class="achievement-card" onclick="showModal('modal1')">First Runner-Up in ICPeP C Programming Competition (2024)</div>
     </div>
 
     <div class="section">
@@ -51,11 +53,20 @@
       <p>Cybersecurity Specialist, Network Engineering, Automation Engineering, Lecturer</p>
     </div>
 
-    <div class="contact">
+    <div class="section contact">
       <h2>Contact Information</h2>
       <p>Email: <a href="mailto:mjrpena@tip.edu.ph?subject=Hello" class="contact-link">mjrpena@tip.edu.ph</a></p>
       <p>LinkedIn: <a href="https://www.linkedin.com/in/john-rhey-pena-b10832313/" class="contact-link">john-rhey-pena</a></p>
       <p>GitHub: <a href="https://github.com/Jrhey124" class="contact-link">Jrhey124</a></p>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal1')">&times;</span>
+      <h2>ICPeP Competition</h2>
+      <p>Secured 1st Runner-Up in a prestigious C Programming competition held in 2024, showcasing advanced C programming capabilities under pressure.</p>
     </div>
   </div>
 </body>
