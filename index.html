@@ -1,73 +1,72 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>John Rhey Pena - Portfolio</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#eaf2f8">
+  <meta name="description" content="John Rhey Pena is a Computer Engineering student interested in cybersecurity, backend systems, networking, and infrastructure.">
+  <meta property="og:title" content="John Rhey Pena | Computer Engineering">
+  <meta property="og:description" content="Cybersecurity, networks, and systems engineering.">
+  <title>John Rhey Pena | Computer Engineering</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="portfolio-data.js"></script>
   <script defer src="script.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
 </head>
 <body>
-  <div id="tsparticles"></div>
-  <div class="profile-container">
-    <div class="profile-header">
-      <img src="https://media.licdn.com/dms/image/v2/D4E03AQGaQ49UHg8VmA/profile-displayphoto-shrink_200_200/B4EZTls3_aG0AY-/0/1739020534728?e=2147483647&v=beta&t=ffc9JG9mvi31hwDABLdYf47Egwx7vscOkPw49JFv0x4" alt="Profile Picture" class="profile-pic" />
-      <h1>John Rhey Pena</h1>
-      <p class="bio">Skilled programmer with 4 years of C/C++ experience. Passionate about penetration testing, embedded systems, networking, and automation.</p>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="#home" aria-label="Home"><span class="brand-pixel" data-profile="initials" aria-hidden="true">JP</span><span data-profile="name">John Rhey Pena</span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation"><span></span><span></span></button>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation"></nav>
+      <a class="nav-contact" href="#contact">Contact <span aria-hidden="true">↗</span></a>
     </div>
+  </header>
 
-    <div class="section">
-      <h2>Professional Summary</h2>
-      <p>I was First Runner-Up in the 2024 ICPeP C Programming competition and have experience in cybersecurity, network engineering, and mentoring.</p>
-    </div>
-
-    <div class="section">
-      <h2>Experience</h2>
-      <ul>
-        <li>4 Years of C/C++ Programming Experience</li>
-        <li>6 Months of Menteeship Program of COESS</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h2>Skills & Expertise</h2>
-      <button id="toggleSkills">Show/Hide Skills</button>
-      <div class="skills" id="skillsSection">
-        <span class="skill">Penetration Testing</span>
-        <span class="skill">Embedded Systems</span>
-        <span class="skill">Networking</span>
-        <span class="skill">C</span>
-        <span class="skill">C++</span>
-        <span class="skill">Python</span>
+  <main id="main">
+    <section class="hero page-wrap" id="home" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="pixel-label"><span class="label-square" aria-hidden="true"></span> <span id="hero-role-label">COMPUTER ENGINEERING STUDENT</span></p>
+        <h1 id="hero-title">Building secure systems from backend to infrastructure.</h1>
+        <p class="hero-intro" id="hero-intro"></p>
+        <div class="hero-actions">
+          <a class="button button-primary" id="projects-cta" href="#projects">View my projects <span aria-hidden="true">↓</span></a>
+          <a class="button button-secondary" id="contact-cta" href="#contact">Get in touch <span aria-hidden="true">↗</span></a>
+          <a class="button button-resume" id="resume-link" hidden download>Download résumé <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="hero-facts" id="hero-facts" hidden></div>
+        <div class="award-note" id="hero-award" hidden><img src="assets/pixel-star.svg" alt="" width="24" height="24"><span><small>COMPETITION RESULT</small><strong id="hero-award-text"></strong></span></div>
       </div>
+
+      <div class="workstation" aria-label="Pixel art illustration of a security workstation beside a profile photo">
+        <div class="scene-window"><div class="panel-heading"><span>WORKSPACE</span><span class="heading-detail">NETWORKS / SECURITY</span></div><img class="workstation-art" src="assets/workstation.svg" alt="Pixel art desk with a monitor showing a shield, a server rack, and connected network nodes."></div>
+        <div class="profile-window"><div class="profile-photo-wrap"><div class="portrait-fallback" id="portrait-fallback" aria-hidden="true">JP</div><img class="profile-photo" id="profile-photo" alt="Portrait of John Rhey Pena" hidden></div><div class="profile-caption"><span class="profile-name" data-profile="name">John Rhey Pena</span><span class="profile-title" id="profile-title">Computer Engineering student</span><span class="profile-focus" id="profile-focus">Cybersecurity · Networking</span></div></div>
+      </div>
+    </section>
+
+    <section class="toolbox page-wrap" id="skills" aria-labelledby="skills-title">
+      <div class="section-topline"><p class="pixel-label"><span class="label-square" aria-hidden="true"></span> TOOLBOX</p><h2 id="skills-title">Skills &amp; areas of practice</h2><p class="section-deck">Technical interests built through programming, study, and hands-on work.</p></div>
+      <div class="toolbox-window"><div class="toolbox-header"><span>SKILLS</span><span>TECHNICAL SUMMARY</span></div><div class="skill-groups" id="skill-groups"></div></div>
+    </section>
+
+    <section class="projects page-wrap" id="projects" aria-labelledby="projects-title">
+      <div class="section-topline projects-topline"><p class="pixel-label"><span class="label-square" aria-hidden="true"></span> SELECTED WORK</p><h2 id="projects-title">Project case files</h2><p class="section-deck" id="projects-deck">Selected projects across backend systems and access control.</p></div>
+      <div class="project-grid" id="project-grid"></div>
+    </section>
+
+    <div class="qualifications page-wrap">
+      <section class="qualification-panel" id="about" aria-labelledby="about-title"><div class="panel-heading"><p class="pixel-label"><span class="label-square" aria-hidden="true"></span> PROFILE</p><h2 id="about-title">About</h2></div><p class="about-lead" id="about-lead"></p><p class="about-body" id="about-body"></p><div class="focus-list" id="focus-list"></div></section>
+      <section class="qualification-panel" id="experience" aria-labelledby="experience-title"><div class="panel-heading"><p class="pixel-label"><span class="label-square" aria-hidden="true"></span> EXPERIENCE</p><h2 id="experience-title">Experience &amp; education</h2></div><div class="timeline" id="timeline"></div></section>
+      <section class="qualification-panel recognition-panel" id="recognition" aria-labelledby="recognition-title"><div class="panel-heading"><p class="pixel-label"><span class="label-square" aria-hidden="true"></span> RECOGNITION</p><h2 id="recognition-title">Awards &amp; credentials</h2></div><div class="recognition-grid" id="recognition-grid"></div></section>
     </div>
 
-    <div class="section achievements">
-      <h2>Achievements</h2>
-      <div class="achievement-card" onclick="showModal('modal1')">First Runner-Up in ICPeP C Programming Competition (2024)</div>
-    </div>
+    <section class="labs page-wrap" id="labs" aria-labelledby="labs-title"><div class="section-topline"><p class="pixel-label"><span class="label-square" aria-hidden="true"></span> HANDS-ON</p><h2 id="labs-title">Labs &amp; infrastructure</h2><p class="section-deck">Practical work and environments, as I add them.</p></div><div class="labs-grid" id="labs-grid"></div></section>
 
-    <div class="section">
-      <h2>Career Interests</h2>
-      <p>Cybersecurity Specialist, Network Engineering, Automation Engineering, Lecturer</p>
-    </div>
-
-    <div class="section contact">
-      <h2>Contact Information</h2>
-      <p>Email: <a href="mailto:mjrpena@tip.edu.ph?subject=Hello" class="contact-link">mjrpena@tip.edu.ph</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/john-rhey-pena-b10832313/" class="contact-link">john-rhey-pena</a></p>
-      <p>GitHub: <a href="https://github.com/Jrhey124" class="contact-link">Jrhey124</a></p>
-    </div>
-  </div>
-
-  <!-- Modal -->
-  <div id="modal1" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('modal1')">&times;</span>
-      <h2>ICPeP Competition</h2>
-      <p>Secured 1st Runner-Up in a prestigious C Programming competition held in 2024, showcasing advanced C programming capabilities under pressure.</p>
-    </div>
-  </div>
+    <section class="contact page-wrap" id="contact" aria-labelledby="contact-title"><div class="contact-panel"><div class="contact-copy"><p class="pixel-label"><span class="label-square" aria-hidden="true"></span> CONTACT</p><h2 id="contact-title">Let’s connect.</h2><p id="contact-copy"></p></div><div class="contact-links" id="contact-links"></div><img class="contact-art" src="assets/pixel-nodes.svg" alt="" aria-hidden="true"></div></section>
+  </main>
+  <footer class="site-footer"><div class="page-wrap footer-inner"><span>© <span id="year"></span> <span data-profile="name">John Rhey Pena</span></span><a href="#home">Back to top ↑</a></div></footer>
 </body>
 </html>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 286" shape-rendering="crispEdges" role="img" aria-labelledby="title desc">
+  <title id="title">Security workstation</title><desc id="desc">A pixel art computer desk with a shield on the monitor, a server rack, and network nodes.</desc>
+  <rect width="480" height="286" fill="#e5eef5"/><path d="M0 232h480v54H0z" fill="#d4e2ed"/><path d="M0 252h480v8H0z" fill="#b4c9da"/>
+  <path d="M27 39h245v145H27z" fill="#244f7b"/><path d="M36 48h227v126H36z" fill="#f5f8fb"/><path d="M49 61h201v100H49z" fill="#dce9f2"/>
+  <path d="M136 184h28v30h-28zM106 212h88v10h-88z" fill="#315d87"/><path d="M60 222h224v13H60z" fill="#244f7b"/><path d="M72 235h12v17H72zM259 235h12v17h-12z" fill="#315d87"/>
+  <path d="M134 73h17v9h17v9h17v34c0 25-14 40-34 50-20-10-34-25-34-50V91h17v-9h17z" fill="#f5f8fb" stroke="#244f7b" stroke-width="5"/><path d="M144 94h15v8h9v15h-9v8h-15v-8h-8v-15h8zM144 129h15v16h-15z" fill="#315d87"/>
+  <path d="M310 54h122v183H310z" fill="#244f7b"/><path d="M320 64h102v46H320zM320 120h102v46H320zM320 176h102v50H320z" fill="#f5f8fb"/>
+  <g fill="#87a6c1"><path d="M332 76h9v9h-9zM348 76h9v9h-9zM364 76h9v9h-9zM380 76h9v9h-9zM332 132h9v9h-9zM348 132h9v9h-9zM364 132h9v9h-9zM380 132h9v9h-9zM332 188h9v9h-9zM348 188h9v9h-9zM364 188h9v9h-9zM380 188h9v9h-9z"/></g>
+  <g fill="#668b77"><path d="M400 76h9v9h-9zM400 132h9v9h-9zM400 188h9v9h-9z"/></g>
+  <path d="M0 267h480v7H0z" fill="#91a9bc"/><path d="M26 222h22v13H26zM290 221h16v14h-16z" fill="#bd8e4d"/>
+  <g fill="#315d87"><path d="M16 25h10v10H16zM26 15h10v10H26zM446 38h10v10h-10zM456 28h10v10h-10zM448 229h10v10h-10zM458 219h10v10h-10z"/></g>
+  <g fill="none" stroke="#668b77" stroke-width="4" stroke-dasharray="8 6"><path d="M60 90H16v84h66M250 94h42v-30h18M270 152h25v40h15"/></g>
+  <g fill="#bd8e4d" stroke="#244f7b" stroke-width="3"><path d="M6 168h20v20H6zM286 54h18v18h-18zM292 182h18v18h-18z"/></g>
+  <g fill="#eaf2f8" stroke="#244f7b" stroke-width="3"><path d="M4 164h16v16H4zM282 50h16v16h-16zM288 178h16v16h-16z"/></g>
+</svg>
