@@ -12,12 +12,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="pixel-dynamics.css">
   <script defer src="portfolio-data.js"></script>
   <script defer src="script.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
+    <div class="page-progress" id="page-progress" role="progressbar" aria-label="Page reading progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span></span></div>
     <div class="nav-shell">
       <a class="brand" href="#home" aria-label="Home"><span class="brand-pixel" data-profile="initials" aria-hidden="true">JP</span><span data-profile="name">John Rhey Pena</span></a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation"><span></span><span></span></button>
@@ -38,12 +40,13 @@
           <a class="button button-resume" id="resume-link" hidden download>Download résumé <span aria-hidden="true">↓</span></a>
         </div>
         <div class="hero-facts" id="hero-facts" hidden></div>
-        <div class="award-note" id="hero-award" hidden><img src="assets/pixel-star.svg" alt="" width="24" height="24"><span><small>COMPETITION RESULT</small><strong id="hero-award-text"></strong></span></div>
+        <a class="award-note" id="hero-award" href="#recognition" hidden><img src="assets/pixel-star.svg" alt="" width="24" height="24"><span class="award-note-content"><small>ACHIEVEMENTS &amp; AWARDS</small><strong id="hero-award-text" hidden></strong><strong id="hero-achievement-text" hidden></strong><span class="award-note-link">View achievements &amp; awards ↓</span></span></a>
       </div>
 
-      <div class="workstation" aria-label="Pixel art illustration of a security workstation beside a profile photo">
-        <div class="scene-window"><div class="panel-heading"><span>WORKSPACE</span><span class="heading-detail">NETWORKS / SECURITY</span></div><img class="workstation-art" src="assets/workstation.svg" alt="Pixel art desk with a monitor showing a shield, a server rack, and connected network nodes."></div>
+      <div class="workstation" aria-label="Pixel art security workstation beside a photo of John">
+        <div class="scene-window"><div class="panel-heading"><span>WORKSPACE</span><span class="heading-detail">NETWORKS / SECURITY</span></div><div class="scene-display"><img class="workstation-art" src="assets/workstation.svg" alt="Pixel art desk with a security monitor, server rack, and connected network nodes."><span class="scene-signal" aria-hidden="true"><i></i><i></i><i></i></span></div></div>
         <div class="profile-window"><div class="profile-photo-wrap"><div class="portrait-fallback" id="portrait-fallback" aria-hidden="true">JP</div><img class="profile-photo" id="profile-photo" alt="Portrait of John Rhey Pena" hidden></div><div class="profile-caption"><span class="profile-name" data-profile="name">John Rhey Pena</span><span class="profile-title" id="profile-title">Computer Engineering student</span><span class="profile-focus" id="profile-focus">Cybersecurity · Networking</span></div></div>
+        <section class="qualification-panel" id="about" aria-labelledby="about-title"><div class="panel-heading"><p class="pixel-label"><span class="label-square" aria-hidden="true"></span> PROFILE</p><h2 id="about-title">About</h2></div><p class="about-lead" id="about-lead"></p><p class="about-body" id="about-body"></p><div class="focus-list" id="focus-list"></div></section>
       </div>
     </section>
 
@@ -54,19 +57,22 @@
 
     <section class="projects page-wrap" id="projects" aria-labelledby="projects-title">
       <div class="section-topline projects-topline"><p class="pixel-label"><span class="label-square" aria-hidden="true"></span> SELECTED WORK</p><h2 id="projects-title">Project case files</h2><p class="section-deck" id="projects-deck">Selected projects across backend systems and access control.</p></div>
+      <div class="project-filters" id="project-filters" role="group" aria-label="Filter projects" hidden></div>
+      <p class="filter-status visually-hidden" id="filter-status" role="status"></p>
       <div class="project-grid" id="project-grid"></div>
     </section>
 
     <div class="qualifications page-wrap">
-      <section class="qualification-panel" id="about" aria-labelledby="about-title"><div class="panel-heading"><p class="pixel-label"><span class="label-square" aria-hidden="true"></span> PROFILE</p><h2 id="about-title">About</h2></div><p class="about-lead" id="about-lead"></p><p class="about-body" id="about-body"></p><div class="focus-list" id="focus-list"></div></section>
-      <section class="qualification-panel" id="experience" aria-labelledby="experience-title"><div class="panel-heading"><p class="pixel-label"><span class="label-square" aria-hidden="true"></span> EXPERIENCE</p><h2 id="experience-title">Experience &amp; education</h2></div><div class="timeline" id="timeline"></div></section>
-      <section class="qualification-panel recognition-panel" id="recognition" aria-labelledby="recognition-title"><div class="panel-heading"><p class="pixel-label"><span class="label-square" aria-hidden="true"></span> RECOGNITION</p><h2 id="recognition-title">Awards &amp; credentials</h2></div><div class="recognition-grid" id="recognition-grid"></div></section>
+      <section class="qualification-panel" id="experience" aria-labelledby="experience-title"><div class="panel-heading"><p class="pixel-label"><span class="label-square" aria-hidden="true"></span> TIMELINE</p><h2 id="experience-title">Experience &amp; Organization</h2></div><div class="timeline-filters" id="timeline-filters" role="group" aria-label="Filter timeline entries"></div><p class="visually-hidden" id="timeline-status" role="status"></p><div class="timeline" id="timeline"></div><button class="text-button" id="experience-toggle" type="button" aria-expanded="false" aria-controls="timeline" hidden>Show more experience &amp; organization</button></section>
+      <section class="qualification-panel recognition-panel" id="recognition" aria-labelledby="recognition-title"><div class="panel-heading"><p class="pixel-label"><span class="label-square" aria-hidden="true"></span> RECOGNITION</p><h2 id="recognition-title">Achievements &amp; awards</h2></div><div class="recognition-grid" id="recognition-grid"></div></section>
+      <section class="qualification-panel recognition-panel certifications-panel" id="certifications" aria-labelledby="certifications-title"><div class="panel-heading"><p class="pixel-label"><span class="label-square" aria-hidden="true"></span> CREDENTIALS</p><h2 id="certifications-title">Certifications &amp; badges</h2></div><div class="recognition-grid" id="certifications-grid"></div><button class="text-button" id="credentials-toggle" type="button" aria-expanded="false" aria-controls="certifications-grid" hidden>Show all credentials</button></section>
     </div>
 
     <section class="labs page-wrap" id="labs" aria-labelledby="labs-title"><div class="section-topline"><p class="pixel-label"><span class="label-square" aria-hidden="true"></span> HANDS-ON</p><h2 id="labs-title">Labs &amp; infrastructure</h2><p class="section-deck">Practical work and environments, as I add them.</p></div><div class="labs-grid" id="labs-grid"></div></section>
 
-    <section class="contact page-wrap" id="contact" aria-labelledby="contact-title"><div class="contact-panel"><div class="contact-copy"><p class="pixel-label"><span class="label-square" aria-hidden="true"></span> CONTACT</p><h2 id="contact-title">Let’s connect.</h2><p id="contact-copy"></p></div><div class="contact-links" id="contact-links"></div><img class="contact-art" src="assets/pixel-nodes.svg" alt="" aria-hidden="true"></div></section>
+    <section class="contact page-wrap" id="contact" aria-labelledby="contact-title"><div class="contact-panel"><div class="contact-copy"><p class="pixel-label"><span class="label-square" aria-hidden="true"></span> CONTACT</p><h2 id="contact-title">Let’s connect.</h2><p id="contact-copy"></p><button class="text-button" id="copy-email" type="button" hidden>Copy email address</button><p class="copy-status" id="copy-status" role="status"></p></div><div class="contact-links" id="contact-links"></div><img class="contact-art" src="assets/pixel-nodes.svg" alt="" aria-hidden="true"></div></section>
   </main>
+  <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top" title="Back to top" hidden>↑</button>
   <footer class="site-footer"><div class="page-wrap footer-inner"><span>© <span id="year"></span> <span data-profile="name">John Rhey Pena</span></span><a href="#home">Back to top ↑</a></div></footer>
 </body>
 </html>
