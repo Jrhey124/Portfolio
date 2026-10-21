@@ -31,7 +31,7 @@ The site includes a small Node.js static-file server and PM2 ecosystem config. I
 
 3. Enable startup after reboot. Run `pm2 startup`, then copy and run the command PM2 prints. Run `pm2 save` again after that.
 
-The portfolio listens on port `8100`, matching the Cloudflare Tunnel route for `jrheypena.space`. Open `http://<raspberry-pi-ip>:8100` from a device on the same network. To use another port, set `PORT` in `ecosystem.config.js` and restart with `pm2 restart john-rhey-portfolio --update-env`. The server listens on all network interfaces by default. For public access, route your Cloudflare Tunnel hostname to `http://localhost:8100` as shown in your tunnel config.
+The portfolio reads `PORT` from `.env` and defaults to `8100`, matching the Cloudflare Tunnel route for `jrheypena.space`. Copy `.env.example` to `.env` when setting up a fresh checkout, then change the value there if needed. Open `http://<raspberry-pi-ip>:8100` from a device on the same network. The server listens on all network interfaces by default. For public access, route your Cloudflare Tunnel hostname to `http://localhost:8100` as shown in your tunnel config.
 
 Useful commands:
 

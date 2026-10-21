@@ -10,8 +10,7 @@ module.exports = {
     max_memory_restart: "100M",
     env: {
       NODE_ENV: "production",
-      HOST: "0.0.0.0",
-      PORT: 8100
+      HOST: "0.0.0.0"
     }
   }]
 };
