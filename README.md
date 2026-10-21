@@ -12,6 +12,35 @@ python -m http.server 8000
 
 Then visit `http://localhost:8000`.
 
+## Host on a Raspberry Pi with PM2
+
+The site includes a small Node.js static-file server and PM2 ecosystem config. It has no project dependencies, so a Raspberry Pi 5 only needs Node.js and PM2 installed.
+
+1. Copy or clone this folder onto the Pi, then install PM2 if needed:
+
+   ```sh
+   sudo npm install --global pm2
+   ```
+
+2. From the portfolio folder, start the site:
+
+   ```sh
+   pm2 start ecosystem.config.js
+   pm2 save
+   ```
+
+3. Enable startup after reboot. Run `pm2 startup`, then copy and run the command PM2 prints. Run `pm2 save` again after that.
+
+The portfolio listens on port `8100`, matching the Cloudflare Tunnel route for `jrheypena.space`. Open `http://<raspberry-pi-ip>:8100` from a device on the same network. To use another port, set `PORT` in `ecosystem.config.js` and restart with `pm2 restart john-rhey-portfolio --update-env`. The server listens on all network interfaces by default. For public access, route your Cloudflare Tunnel hostname to `http://localhost:8100` as shown in your tunnel config.
+
+Useful commands:
+
+```sh
+pm2 status
+pm2 logs john-rhey-portfolio
+pm2 restart john-rhey-portfolio
+```
+
 ## Update your information
 
 Edit [`portfolio-data.js`](portfolio-data.js). It contains the content displayed throughout the site. Leave an optional field blank, or leave an optional list empty, and the related detail or section will be omitted automatically.
