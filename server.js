@@ -5,7 +5,35 @@ const fs = require("node:fs");
 const path = require("node:path");
 
 const root = __dirname;
-const port = Number.parseInt(process.env.PORT || "3050", 10);
+
+function loadEnvFile(filePath) {
+  let contents;
+  try {
+    contents = fs.readFileSync(filePath, "utf8");
+  } catch (error) {
+    if (error.code === "ENOENT") return;
+    throw error;
+  }
+
+  for (const line of contents.split(/\r?\n/)) {
+    const match = line.match(/^\s*([A-Za-z_][A-Za-z0-9_]*)\s*=\s*(.*?)\s*$/);
+    if (!match || match[1] in process.env) continue;
+    let value = match[2];
+    if ((value.startsWith('"') && value.endsWith('"')) || (value.startsWith("'") && value.endsWith("'"))) {
+      value = value.slice(1, -1);
+    } else {
+      value = value.replace(/\s+#.*$/, "");
+    }
+    process.env[match[1]] = value;
+  }
+}
+
+loadEnvFile(path.join(root, ".env"));
+
+const port = Number.parseInt(process.env.PORT || "8100", 10);
+if (!Number.isInteger(port) || port < 1 || port > 65535) {
+  throw new Error("PORT must be a number between 1 and 65535");
+}
 const host = process.env.HOST || "0.0.0.0";
 const mimeTypes = {
   ".css": "text/css; charset=utf-8",
